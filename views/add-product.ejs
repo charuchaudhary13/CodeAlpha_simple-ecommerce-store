@@ -1,0 +1,18 @@
+<!DOCTYPE html> <html> <head> <title>Add Product</title> </head> <body> <h1>Add New Product</h1> <form action="/add-product" method="POST"> <label>Product Title:</label><br> <input type="text" name="title" required><br><br>
+<!-- php-template
+Copy
+Edit -->
+<label>Price:</label><br>
+<input type="number" name="price" required><br><br>
+
+<label>Description:</label><br>
+<textarea name="description" required></textarea><br><br>
+
+<label>Image URL:</label><br>
+<input type="text" name="image"><br><br>
+
+<label>Category:</label><br>
+<input type="text" name="category"><br><br>
+
+<button type="submit">Add Product</button>
+</form> </body> </html>
