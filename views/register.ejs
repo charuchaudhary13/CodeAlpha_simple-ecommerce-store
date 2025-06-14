@@ -1,13 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head><title>Register</title></head>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <title>Register</title>
+</head>
 <body>
-  <h1>Register</h1>
-  <form method="POST" action="/register">
-    <input name="username" placeholder="Username" required><br>
-    <input name="email" type="email" placeholder="Email" required><br>
-    <input name="password" type="password" placeholder="Password" required><br>
-    <button type="submit">Register</button>
-  </form>
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+      <h2 class="text-center mb-4">Register</h2>
+      <form action="/register" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" name="name" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" required />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" required />
+        </div>
+        <button type="submit" class="btn btn-success w-100">Register</button>
+      </form>
+      <div class="text-center mt-3">
+        <p>or sign up with</p>
+        <div class="d-flex justify-content-center gap-3">
+          <button class="btn btn-outline-danger"><i class="bi bi-google"></i></button>
+          <button class="btn btn-outline-primary"><i class="bi bi-facebook"></i></button>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <a href="/login">Already have an account? Login</a>
+      </div>
+      <div class="text-end mt-3">
+        <button class="btn btn-sm btn-secondary" id="themeToggle">Toggle Theme</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('themeToggle').onclick = function () {
+      const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+      document.documentElement.setAttribute('data-bs-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    };
+  </script>
 </body>
 </html>

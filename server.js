@@ -1,3 +1,4 @@
+
 require('dotenv').config();
 
 
@@ -10,7 +11,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 // Load environment variables from .env
-dotenv.config();
+ dotenv.config();
 
 // Express app
 const app = express();
@@ -43,12 +44,15 @@ app.use(async (req, res, next) => {
 });
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('✅ MongoDB Connected'))
-.catch(err => console.error('MongoDB connection error:', err));
+// 
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('✅ MongoDB Connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+  // mongoose.set('debug', true);
+
+
+// .then(() => console.log('✅ MongoDB Connected'))
+// .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
 const authRoutes = require('./routes/auth');
