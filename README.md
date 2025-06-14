@@ -7,8 +7,6 @@ A simple and fully functional e-commerce web app built with Node.js, Express, Mo
 
 ---
 
-Note: The login and register pages are accessible by navigating to /login and /register in the browser. I haven’t added navigation links yet but plan to improve this in the next update.
-
 ## ⚙️ Tech Stack
 
 - **Backend**: Node.js + Express
