@@ -63,14 +63,6 @@ node server.js
 
 ---
 
-## 📸 Screenshots
-
-| Home Page | Cart Page | Login/Register |
-|-----------|-----------|----------------|
-| (Add Screenshot) | (Add Screenshot) | (Add Screenshot) |
-
----
-
 ## 📁 Folder Structure
 
 ```
