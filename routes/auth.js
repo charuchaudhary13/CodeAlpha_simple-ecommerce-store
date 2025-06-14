@@ -1,4 +1,4 @@
- const express = require('express');
+const express = require('express');
 const router = express.Router();
 
 // Login page
@@ -14,17 +14,30 @@ router.get('/register', (req, res) => {
 // Handle registration
 router.post('/register', (req, res) => {
   const { name, email, password } = req.body;
-  // TODO: Add registration logic
-  res.send('Registration logic here');
+
+  // Just store user info in session for now (for demo only)
+  req.session.user = { name, email };
+  res.redirect('/');
 });
 
 // Handle login
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
-  // TODO: Add login logic
-  res.send('Login logic here');
+
+  // For demo: log in without checking DB
+  req.session.user = { email };
+  res.redirect('/');
+});
+
+// Logout
+router.get('/logout', (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      console.error('❌ Error during logout:', err);
+      return res.redirect('/');
+    }
+    res.redirect('/login');
+  });
 });
 
 module.exports = router;
-
-  

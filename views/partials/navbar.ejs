@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+  <a class="navbar-brand" href="/">SimpleStore</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <% if (typeof session !== 'undefined' && session.loggedIn) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/add-product">Add Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cart">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-danger ms-3" href="/logout">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </a>
+        </li>
+      <% } else { %>
+        <li class="nav-item">
+          <a class="btn btn-outline-primary me-2" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-success" href="/register">Register</a>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+</nav>

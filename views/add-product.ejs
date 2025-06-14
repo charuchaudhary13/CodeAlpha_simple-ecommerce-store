@@ -1,18 +1,39 @@
-<!DOCTYPE html> <html> <head> <title>Add Product</title> </head> <body> <h1>Add New Product</h1> <form action="/add-product" method="POST"> <label>Product Title:</label><br> <input type="text" name="title" required><br><br>
-<!-- php-template
-Copy
-Edit -->
-<label>Price:</label><br>
-<input type="number" name="price" required><br><br>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body>
+    <%- include('partials/navbar') %>
 
-<label>Description:</label><br>
-<textarea name="description" required></textarea><br><br>
+    <div class="container mt-5">
+      <h2 class="mb-4">Add New Product</h2>
+      <form action="/add-product" method="POST">
+        <div class="mb-3">
+          <label class="form-label">Product Title:</label>
+          <input type="text" name="title" class="form-control" required>
+        </div>
 
-<label>Image URL:</label><br>
-<input type="text" name="image"><br><br>
+        <div class="mb-3">
+          <label class="form-label">Price:</label>
+          <input type="number" name="price" class="form-control" required>
+        </div>
 
-<label>Category:</label><br>
-<input type="text" name="category"><br><br>
+        <div class="mb-3">
+          <label class="form-label">Description:</label>
+          <textarea name="description" class="form-control" required></textarea>
+        </div>
 
-<button type="submit">Add Product</button>
-</form> </body> </html>
+        <div class="mb-3">
+          <label class="form-label">Image URL:</label>
+          <input type="text" name="image" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Category:</label>
+          <input type="text" name="category" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-success">Add Product</button>
+      </form>
+    </div>
+  </body>
+</html>
